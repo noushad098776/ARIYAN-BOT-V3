@@ -1,24 +1,16 @@
-const { createCanvas, registerFont } = require('canvas');
+const { createCanvas } = require('canvas');
 const fs = require('fs-extra');
 const path = require('path');
 
-try {
-    const fontDir = path.join(__dirname, 'assets', 'font');
-    registerFont(path.join(fontDir, 'NotoSans-Bold.ttf'), { family: 'Arial', weight: 'bold' });
-    registerFont(path.join(fontDir, 'NotoSans-Regular.ttf'), { family: 'Arial', weight: 'normal' });
-} catch (e) {
-    // fallback to system fonts
-}
-
 exports.config = {
     name: "maze",
-    author: "allou moha",//updated by NeoKEX
+    author: "allou moha",//updated by Siam Ahmed Saan
     role: 0,
     countDown: 40,
     description: "Play maze with adjustable difficulty.",
     version: "1.0.3",
     guide: "{pn} [1-10] or {pn} [easy|medium|hard]",
-    category: "game",
+    category: "GAMES",
 };
 
 function generateMazeImage(difficulty = 15, grid = null, cols = null, highlightPath = null, wrongPath = null, currentPosition = null, progressPath = null) {
